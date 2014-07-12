@@ -7,6 +7,9 @@ cp .gitconfig ~/.gitconfig
 #bash config
 cp .bashrc ~/.bashrc
 
+#tmux
+cp .tmux.conf ~/.tmux.conf
+
 #Random utility scripts
 if [ ! -e ~/bin ]; then
     mkdir ~/bin
