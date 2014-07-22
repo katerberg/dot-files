@@ -4,4 +4,5 @@ st = status
 ci = commit
 co = checkout
 cho = checkout
+cho = checkout
 br = branch
