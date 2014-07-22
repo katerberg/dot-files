@@ -10,6 +10,10 @@ cp .bashrc ~/.bashrc
 #tmux
 cp .tmux.conf ~/.tmux.conf
 
+#dictionary
+ln -s .dictionary ~/.dictionary
+
+#Random utility scripts
 #Random utility scripts
 if [ ! -e ~/bin ]; then
     mkdir ~/bin
