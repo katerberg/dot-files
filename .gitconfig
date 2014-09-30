@@ -6,3 +6,4 @@ co = checkout
 cho = checkout
 cho = checkout
 br = branch
+branch-clean = '!git fetch && git remote prune origin && git branch --merged master | grep -v master | xargs git branch -d'
