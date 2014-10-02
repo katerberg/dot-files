@@ -1,0 +1,126 @@
+## Conky
+## special thanks to Iacoporosso, Ninquitassar
+##..: Conky status :..
+##
+  total_run_times 0                   #Time in seconds; 0 = ever
+  background yes                      #Fork in background
+##
+##..: System Settings :..
+##
+  cpu_avg_samples 1                   #The number of samples to average for CPU monitoring
+  net_avg_samples 2                   #The number of samples to average for net data 
+##
+##..: Memory :..
+##
+  double_buffer yes                   #eliminates flicker
+  no_buffers yes                      #Subtract (file system) buffers from used memory?
+  text_buffer_size 1024               #Textual buffer memory
+##
+##..: Display :..
+  out_to_console no                   #Print text to stdout
+  update_interval 1                   #Update interval
+##
+##..: Conky Window :..
+##
+  alignment top_left                  #Alignment
+  
+  minimum_size 800                    #Minimum width (px)
+  maximum_width 800                   #Maximun width (px)
+  
+  gap_x -1                            #Gap between left/right border
+  gap_y 60                            #Gap between upper/lower border
+  
+  draw_shades no                      #Draw shadows?
+  draw_outline no                     #Draw outline?
+  draw_borders no                     #Borders to the text?
+  border_width 1                      #Width of borders
+  border_inner_margin 1               #Width of margins
+  
+  own_window yes                      #Create own window to draw
+  own_window_type desktop             #Type of window
+  own_window_transparent yes          #Pseudo transparency
+##
+##..: Format :..
+##
+  use_xft yes                         #Use Xft
+  xftalpha .1                         #Alpha of Xft
+  override_utf8_locale yes            #UTF8 forcing
+  uppercase no                        #Only capital letters
+  use_spacer right                    #Adds spaces around certain objects to stop them from moving other things around
+  
+  xftfont saxMono:size=9              #Default font
+  
+  default_bar_size 82 3               #Specify a default width and height for bars
+  stippled_borders 3                  #Border dashing
+##
+##..: Colors :..
+##
+  default_color FFFFFF                #Default color
+  default_shade_color 333333          #Default color for shadows
+  default_outline_color black         #Default border color
+  
+  color1 D6D6D6                       #Silver
+  color2 EFEFEF                       #Pearl white
+  color3 A3ADB0                       #Grey
+##
+##..: Misc :..
+##
+  short_units yes                       #Shortens units to a single character
+  pad_percents 2                        #Number of decimals
+
+##
+##..: Clock and rings :..
+##
+  lua_load ~/.conky/scripts/clock-left.lua
+  lua_draw_hook_pre clock_rings
+
+TEXT
+#..: Wifi Quality :..
+${color d7d7d7}${voffset 28}${cpugraph cpu6 1,697}${voffset 1}${cpugraph cpu6 17,1}${color3}
+${offset 200}${font Nimbus Mono L:size=8 style=bold}Wifi Quality ${voffset -15}${font neuropol:size=20}${wireless_link_qual_perc wlan0} ${offset -27}% ${font Nimbus Mono L:size=8 style=bold}
+${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
+$alignr${offset -480}network ${wireless_essid wlan0}
+$alignr${offset -480}gateway ${gw_ip wlan0}
+$alignr${offset -480}localhost ${addr wlan0}
+$alignr${offset -480}access ${wireless_ap wlan0}
+
+#..: Entropy :..
+${color d7d7d7}${voffset 73}${cpugraph cpu6 1,651}${voffset 1}${cpugraph cpu6 17,1}${color3}
+$alignr${offset -520}${font Nimbus Mono L:size=8 style=bold}Entropy ${voffset -15}${font neuropol:size=20}$entropy_perc% ${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -490}${voffset -5}${cpubar cpu6 0, 210}${voffset 2}${color1}
+$alignr${offset -510}${entropy_avail} / ${entropy_poolsize}
+$alignr${offset -510}${execpi 20 dropbox.py status | sed 's/\(.*\)/\L\1/'}
+
+#..: Wifi Transfer :..
+${color d7d7d7}${voffset 94}${cpugraph cpu6 1,601}${voffset 1}${cpugraph cpu6 17,1}${color3}
+$alignr${offset -550}${font Nimbus Mono L:size=8 style=bold}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed wlan0}${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -550}${font Nimbus Mono L:size=8 style=bold}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed wlan0}${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -490}${voffset -5}${cpubar cpu6 0, 210}${voffset 2}${color1}
+$alignr${offset -520}tDown ${totaldown wlan0}
+$alignr${offset -520}bitrate ${wireless_bitrate wlan0}
+
+#..: Temperature :..
+${color d7d7d7}${voffset 97}${cpugraph cpu6 1,671}${voffset 1}${cpugraph cpu6 17,1}${color3}
+$alignr${offset -490}${font Nimbus Mono L:size=8 style=bold}Temperature ${voffset -15}${font neuropol:size=20}${hwmon 0 temp 1}°C ${font Nimbus Mono L:size=8 style=bold}
+${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
+$alignr${offset -480}all cpu ${hwmon 1 temp 1}°C
+$alignr${offset -480}core one ${hwmon 1 temp 2}°C
+$alignr${offset -480}core two ${hwmon 1 temp 3}°C
+$alignr${offset -480}core three ${hwmon 1 temp 4}°C
+$alignr${offset -480}core four ${hwmon 1 temp 5}°C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

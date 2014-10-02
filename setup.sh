@@ -10,6 +10,9 @@ cp .bashrc ~/.bashrc
 #tmux
 cp .tmux.conf ~/.tmux.conf
 
+#conky
+cp -r conky ~/.conky
+
 #dictionary
 ln -s .dictionary ~/.dictionary
 

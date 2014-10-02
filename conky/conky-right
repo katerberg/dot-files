@@ -1,0 +1,133 @@
+## Conky
+## special thanks to Iacoporosso, Ninquitassar
+##..: Conky status :..
+##
+  total_run_times 0                   #Time in seconds; 0 = ever
+  background yes                       #Fork in background
+##
+##..: System Settings :..
+##
+  cpu_avg_samples 1                   #The number of samples to average for CPU monitoring
+  net_avg_samples 2                   #The number of samples to average for net data 
+##
+##..: Memory :..
+##
+  double_buffer yes                   #eliminates flicker
+  no_buffers yes                      #Subtract (file system) buffers from used memory?
+  text_buffer_size 1024               #Textual buffer memory
+##
+##..: Display :..
+  out_to_console no                   #Print text to stdout
+  update_interval 1                   #Update interval
+##
+##..: Conky Window :..
+##
+  alignment top_right                 #Alignment
+  
+  minimum_size 800                    #Minimum width (px)
+  maximum_width 800                   #Maximun width (px)
+  
+  gap_x -1                            #Gap between left/right border
+  gap_y 60                            #Gap between upper/lower border
+  
+  draw_shades no                      #Draw shadows?
+  draw_outline no                     #Draw outline?
+  draw_borders no                     #Borders to the text?
+  border_width 1                      #Width of borders
+  border_inner_margin 1               #Width of margins
+  
+  own_window yes                      #Create own window to draw
+  own_window_type desktop             #Type of window
+  own_window_transparent yes          #Pseudo transparency
+##
+##..: Format :..
+##
+  use_xft yes                         #Use Xft
+  xftalpha .1                         #Alpha of Xft
+  override_utf8_locale yes            #UTF8 forcing
+  uppercase no                        #Only capital letters
+  use_spacer right                    #Adds spaces around certain objects to stop them from moving other things around
+  
+  xftfont saxMono:size=9              #Default font
+  
+  default_bar_size 82 3               #Specify a default width and height for bars
+  stippled_borders 3                  #Border dashing
+##
+##..: Colors :..
+##
+  default_color FFFFFF                #Default color
+  default_shade_color 333333          #Default color for shadows
+  default_outline_color black         #Default border color
+  
+  color1 D6D6D6                       #Silver
+  color2 EFEFEF                       #Pearl white
+  color3 A3ADB0                       #Grey
+##
+##..: Misc :..
+##
+  short_units yes                       #Shortens units to a single character
+  pad_percents 2                        #Number of decimals
+##
+##..: Clock and rings :..
+##
+  lua_load ~/.conky/scripts/clock-right.lua
+  lua_draw_hook_pre clock_rings
+
+
+TEXT
+# ..: CLOCK & CALENDAR :..
+${color d7d7d7}${offset 96}${voffset 30}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+
+${voffset -19}${offset 450}${font neuropol:size=20}${time %H:%M}${font}  ${voffset -3}${font Nimbus Mono L:size=9}$uptime
+${voffset -5}${offset 450}${cpubar cpu6 0, 250}${voffset 2}${color1}
+${font Nimbus Mono L:size=8 style=bold}${color2}${offset 460} ${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
+${color3}${execpi 60 JOUR=`date +%e`; cal -h | sed '1d' | sed 's/\(.*\)/\L\1/' | sed 's/^/${offset 456}/' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color 3273b5}'"$JOUR"'${color3}'" "/}
+
+
+
+#..: BATTERY :..
+${color d7d7d7}${offset 141}${voffset -8}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${offset 544}${voffset -10} ${font neuropol:size=20}${battery_percent BAT0} %${font Nimbus Mono L:size=8 style=bold}  Battery
+${offset 550}${voffset -5}${cpubar cpu6 0, 150}${voffset 2}${color1}
+${offset 560}..:: ${acpiacadapter} ::..
+${offset 560}${battery_time BAT0}
+
+#..: CPU USAGE :..
+${color d7d7d7}${offset 191}${voffset 80}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${offset 550}${voffset -7}${font neuropol:size=20}${cpu cpu0}% ${font Nimbus Mono L:size=8 style=bold}Cpu
+${offset 550}${voffset -5}${cpubar cpu6 0, 150}${voffset 2}${color1}
+${offset 550}${top pid 1} ${top name 1} ${top cpu 1}
+${offset 550}${top pid 2} ${top name 2} ${top cpu 2}
+${offset 550}${top pid 3} ${top name 3} ${top cpu 3}
+${offset 550}${top pid 4} ${top name 4} ${top cpu 4}
+${offset 550}${top pid 5} ${top name 5} ${top cpu 5}
+
+
+#..: HARD DISK :..
+${color d7d7d7}${offset 121}${voffset 73}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${offset 450}${font neuropol:size=20}$memperc % ${font Nimbus Mono L:size=8 style=bold} Ram
+${offset 450}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
+${offset 460}linux ${fs_used /} / ${fs_size /}
+${offset 460}windows ${fs_used /media/windows} / ${fs_size /media/windows}
+${offset 460}hdd ${hddtemp /dev/sda}°C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
