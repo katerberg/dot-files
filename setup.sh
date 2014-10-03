@@ -30,5 +30,6 @@ else
 fi
 cp bin/nocaps.sh ~/bin/nocaps.sh
 cp bin/sau.sh ~/bin/sau.sh
+cp bin/convert.sh ~/bin/convert.sh
 
 exit 0
