@@ -82,7 +82,7 @@ ${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
 $alignr${offset -480}network ${wireless_essid wlan0}
 $alignr${offset -480}gateway ${gw_ip wlan0}
 $alignr${offset -480}localhost ${addr wlan0}
-$alignr${offset -480}access ${wireless_ap wlan0}
+$alignr${offset -480}remote ${execpi 20 curl icanhazip.com}
 
 #..: Entropy :..
 ${color d7d7d7}${voffset 73}${cpugraph cpu6 1,651}${voffset 1}${cpugraph cpu6 17,1}${color3}
