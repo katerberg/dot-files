@@ -89,7 +89,7 @@ ${color d7d7d7}${voffset 73}${cpugraph cpu6 1,651}${voffset 1}${cpugraph cpu6 17
 $alignr${offset -520}${font Nimbus Mono L:size=8 style=bold}Entropy ${voffset -15}${font neuropol:size=20}$entropy_perc% ${font Nimbus Mono L:size=8 style=bold}
 $alignr${offset -490}${voffset -5}${cpubar cpu6 0, 210}${voffset 2}${color1}
 $alignr${offset -510}${entropy_avail} / ${entropy_poolsize}
-${execpi 20 dropbox.py status | sed 's/\(.*\)/\L\1/' | sed 's/^/$alignr${offset -510}/'}
+$alignr${offset -505}${execpi 20 tac /var/log/owncloud.log |grep -m1 Transaction|sed 's/^.*"\(.*\)"/\1/'}
 
 #..: Wifi Transfer :..
 ${color d7d7d7}${voffset 94}${cpugraph cpu6 1,601}${voffset 1}${cpugraph cpu6 17,1}${color3}
