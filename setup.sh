@@ -10,6 +10,9 @@ cp .bashrc ~/.bashrc
 #tmux
 cp .tmux.conf ~/.tmux.conf
 
+#jshint
+cp .jshintrc ~/.jshintrc
+
 #conky
 cp -r conky ~/.conky
 
