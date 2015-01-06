@@ -178,18 +178,10 @@
 			</item>
 		</menu>
 		<menu id="network" label="Network">
-		    <menu execute="cb-x-www-browser-pipemenu" id="wwwbrowsers" label="WWW Browsers"/>
-			<item label="gFTP Client">
+			<item label="Deluge BitTorrent Client">
 				<action name="Execute">
 					<command>
-						gftp
-					</command>
-				</action>
-			</item>
-			<item label="Transmission BitTorrent Client">
-				<action name="Execute">
-					<command>
-						transmission-gtk
+						deluge
 					</command>
 				</action>
 			</item>
@@ -200,20 +192,8 @@
 					</command>
 				</action>
 			</item>
-			<item label="Remote Filesystems">
-				<action name="Execute">
-					<command>
-						gigolo
-					</command>
-				</action>
-			</item>
-			<menu execute="cb-remote-desktop-pipemenu" id="remotedesktop" label="Remote Desktop"/>
-			<menu execute="cb-sshconfig-pipemenu" id="sshconfig" label="SSH"/>
-			<separator label="Services"/>
-			<menu execute="cb-dropbox-pipemenu" id="dropbox" label="Dropbox"/>
 		</menu>
 		<menu id="office" label="Office">
-		    <menu id="libreoffice" label="LibreOffice" execute="cb-libreoffice-pipemenu" />
 		    <item label="Google Docs">
 				<action name="Execute">
 					<command>
