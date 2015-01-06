@@ -14,6 +14,7 @@ cp .tmux.conf ~/.tmux.conf
 cp .jshintrc ~/.jshintrc
 
 #conky
+sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/conky
 cp -r conky ~/.conky
 
 #dictionary
