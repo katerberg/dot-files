@@ -17,10 +17,26 @@ cp .jshintrc ~/.jshintrc
 sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/conky
 cp -r conky ~/.conky
 
+#git
+git config user.email "katerberg@fastmail.fm"
+git config user.name "Katerberg"
+
+#config files
+if [ ! -e ~/.config ]; then
+    mkdir ~/.config
+else
+    if [ -d ~/.config ]; then
+        echo "WARNING: ~/.config folder already exists"
+    else
+        echo "ERROR: ~/.config file exists and is not a folder"
+        exit 1
+    fi
+fi
+cp -r config/* ~/.config/
+
 #dictionary
 ln -s .dictionary ~/.dictionary
 
-#Random utility scripts
 #Random utility scripts
 if [ ! -e ~/bin ]; then
     mkdir ~/bin

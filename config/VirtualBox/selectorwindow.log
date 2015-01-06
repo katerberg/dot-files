@@ -1,0 +1,14 @@
+VirtualBox GUI VM Selector Window 4.3.18_Ubuntu r96516 linux.amd64 (Oct 21 2014 20:05:32) release log
+00:00:00.226193 Log opened 2015-01-04T23:18:37.328714000Z
+00:00:00.226194 Build Type: release
+00:00:00.226195 OS Product: Linux
+00:00:00.226196 OS Release: 3.16.0-28-generic
+00:00:00.226197 OS Version: #38-Ubuntu SMP Fri Dec 12 17:37:40 UTC 2014
+00:00:00.226211 DMI Product Name: MacBookPro11,2
+00:00:00.226215 DMI Product Version: 1.0
+00:00:00.226438 Host RAM: 15956MB total, 14915MB available
+00:00:00.226440 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.226441 Process ID: 5136
+00:00:00.226442 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.230232 UIMediumEnumerator: Medium-enumeration started...
+00:00:00.271676 UIMediumEnumerator: Medium-enumeration finished!

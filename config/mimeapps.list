@@ -1,0 +1,6 @@
+[Default Applications]
+application/pdf=evince.desktop
+image/jpeg=gpicview.desktop
+
+[Added Associations]
+image/jpeg=gpicview.desktop;
