@@ -30,34 +30,18 @@ hsetroot -solid "#2E3436" &
 ## 4. tint2 panel
 (\
 nitrogen --restore && \
-#cb-compositor --start && \
 sleep 2s && \
 tint2 \
 ) &
-
-## Volume control for systray
-#(sleep 2s && pnmixer) &
-
-## Volume keys daemon
-#xfce4-volumed &
 
 ## Enable power management
 xfce4-power-manager &
 
 ## Start Thunar Daemon
-#thunar --daemon &
-
-## Detect and configure touchpad. See 'man synclient' for more info.
-#if egrep -iq 'touchpad' /proc/bus/input/devices; then
-#    synclient VertEdgeScroll=1 &
-#    synclient TapButton1=1 &
-#fi
+thunar --daemon &
 
 ## Start xscreensaver
-#xscreensaver -no-splash &
-
-## Start Clipboard manager
-#(sleep 3s && clipit) &
+xscreensaver -no-splash &
 
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
