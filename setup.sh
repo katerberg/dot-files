@@ -2,10 +2,10 @@
 error=0
 
 #Git config
-cp .gitconfig ~/.gitconfig
+cp gitconfig ~/.gitconfig
 
 #bash config
-cp .bashrc ~/.bashrc
+cp bashrc ~/.bashrc
 
 #tmux
 cp .tmux.conf ~/.tmux.conf
@@ -21,21 +21,8 @@ cp -r conky ~/.conky
 git config user.email "katerberg@fastmail.fm"
 git config user.name "Katerberg"
 
-#config files
-if [ ! -e ~/.config ]; then
-    mkdir ~/.config
-else
-    if [ -d ~/.config ]; then
-        echo "WARNING: ~/.config folder already exists"
-    else
-        echo "ERROR: ~/.config file exists and is not a folder"
-        exit 1
-    fi
-fi
-cp -r config/* ~/.config/
-
 #dictionary
-ln -s .dictionary ~/.dictionary
+cp dictionary ~/.dictionary
 
 #Random utility scripts
 if [ ! -e ~/bin ]; then
