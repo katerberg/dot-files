@@ -8,10 +8,10 @@ cp gitconfig ~/.gitconfig
 cp bashrc ~/.bashrc
 
 #tmux
-cp .tmux.conf ~/.tmux.conf
+cp tmux.conf ~/.tmux.conf
 
 #jshint
-cp .jshintrc ~/.jshintrc
+cp jshintrc ~/.jshintrc
 
 #conky
 sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/conky
