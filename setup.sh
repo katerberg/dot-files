@@ -24,6 +24,10 @@ git config user.name "Katerberg"
 #dictionary
 cp dictionary ~/.dictionary
 
+#tint2restart
+sudo cp tint2restart /usr/bin/tint2restart
+sudo chmod 755 /usr/bin/tint2restart
+
 #Random utility scripts
 if [ ! -e ~/bin ]; then
     mkdir ~/bin
