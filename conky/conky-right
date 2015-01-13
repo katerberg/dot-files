@@ -81,7 +81,7 @@ ${color d7d7d7}${offset 96}${voffset 30}${cpugraph cpu6 17,1}${voffset -3}${hr 2
 ${voffset -19}${offset 450}${font neuropol:size=20}${time %H:%M}${font}  ${voffset -3}${font Nimbus Mono L:size=9}$uptime
 ${voffset -5}${offset 450}${cpubar cpu6 0, 250}${voffset 2}${color1}
 ${font Nimbus Mono L:size=8 style=bold}${color2}${offset 460} ${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
-${color3}${execpi 60 JOUR=`date +%e`; cal -h | sed '1d' | sed 's/\(.*\)/\L\1/' | sed 's/^/${offset 456}/' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color 3273b5}'"$JOUR"'${color3}'" "/}
+${color3}${execpi 60 JOUR=`date +%e`; cal -h | sed '1d' | sed 's/\(.*\)/\L\1/' | sed 's/^/${offset 456}/' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color e700e7}'"$JOUR"'${color3}'" "/}
 
 
 
@@ -111,6 +111,13 @@ ${offset 460}linux ${fs_used /} / ${fs_size /}
 ${offset 460}osx ${fs_used /mnt/osx} / ${fs_size /mnt/osx}
 ${offset 460}boot ${fs_used /boot/efi} / ${fs_size /boot/efi}
 ${offset 460}hdd ${execi 15 hddtemp /dev/sda | cut -c 30-31}°C
+
+
+
+
+
+
+
 
 
 
