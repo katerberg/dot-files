@@ -15,6 +15,7 @@ cp jshintrc ~/.jshintrc
 
 #conky
 sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/conky
+sudo chmod u+s /usr/sbin/hddtemp
 cp -r conky ~/.conky
 
 #git
@@ -27,6 +28,9 @@ cp dictionary ~/.dictionary
 #tint2restart
 sudo cp tint2restart /usr/bin/tint2restart
 sudo chmod 755 /usr/bin/tint2restart
+
+#npm
+sudo npm install -g karma karma-cli bower
 
 #Random utility scripts
 if [ ! -e ~/bin ]; then
