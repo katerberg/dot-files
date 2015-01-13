@@ -242,7 +242,7 @@ settings_table = {
   },
 {
     name='fs_used_perc',
-    arg='/media/windows',
+    arg='/mnt/osx',
     start_angle=0,
     end_angle=360,
     max=100,
@@ -253,6 +253,20 @@ settings_table = {
     x=mem_x, y=mem_y,
     radius=33,
     thickness=5
+  },
+{
+    name='fs_used_perc',
+    arg='/boot/efi',
+    start_angle=0,
+    end_angle=360,
+    max=100,
+    bg_colour=0xffffff,
+    bg_alpha=0.1,
+    fg_colour=0xd7d7d7,
+    fg_alpha=0.6,
+    x=mem_x, y=mem_y,
+    radius=28,
+    thickness=3
   }
 }
 require 'cairo'

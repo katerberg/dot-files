@@ -108,8 +108,12 @@ ${color d7d7d7}${offset 121}${voffset 73}${cpugraph cpu6 17,1}${voffset -3}${hr 
 ${offset 450}${font neuropol:size=20}$memperc % ${font Nimbus Mono L:size=8 style=bold} Ram
 ${offset 450}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
 ${offset 460}linux ${fs_used /} / ${fs_size /}
-${offset 460}windows ${fs_used /media/windows} / ${fs_size /media/windows}
-${offset 460}hdd ${hddtemp /dev/sda}°C
+${offset 460}osx ${fs_used /mnt/osx} / ${fs_size /mnt/osx}
+${offset 460}boot ${fs_used /boot/efi} / ${fs_size /boot/efi}
+${offset 460}hdd ${execi 15 hddtemp /dev/sda | cut -c 30-31}°C
+
+
+
 
 
 
