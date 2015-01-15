@@ -17,11 +17,14 @@ Changelog:
 + v1.0 -- Original release (30.09.2009)
 ]]
 
+-- Screen width in pixels
+  screen_width=900
+
 --Use these settings to define the origin and extent of your clock.
   clock_r=50
 
 --Coordinates of the centre of the clock, in pixels, from the top left of the Conky window.
-  clock_x=100
+  clock_x=screen_width-700
   clock_y=112
 
 --Colour & alpha of the clock hands
@@ -32,16 +35,21 @@ Changelog:
   show_seconds=true
 
 --Battery position
-    bat_x=145
+    bat_x=screen_width-655
     bat_y=277
 
 --CPU position
-    cpu_x=195
+    cpu_x=screen_width-605
     cpu_y=460
 
 --Memory position
-    mem_x=125
-    mem_y=673
+    mem_x=screen_width-675
+    mem_y=674
+
+-- Entropy location
+    entropy_x=screen_width-796
+    entropy_y=862
+
 
 settings_table = {
   {
@@ -267,6 +275,20 @@ settings_table = {
     x=mem_x, y=mem_y,
     radius=28,
     thickness=3
+  },
+{
+    name='entropy_perc',
+	arg='',
+	max=100,
+    bg_colour=0xffffff,
+    bg_alpha=0.1,
+    fg_colour=0xd7d7d7,
+    fg_alpha=0.6,
+    radius=30,
+    thickness=10,
+    start_angle=0,
+    end_angle=360,
+    x=entropy_x, y=entropy_y
   }
 }
 require 'cairo'

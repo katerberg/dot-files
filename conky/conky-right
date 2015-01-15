@@ -24,8 +24,8 @@
 ##
   alignment top_right                 #Alignment
   
-  minimum_size 800                    #Minimum width (px)
-  maximum_width 800                   #Maximun width (px)
+  minimum_size 900                    #Minimum width (px)
+  maximum_width 900                   #Maximun width (px)
   
   gap_x -1                            #Gap between left/right border
   gap_y 60                            #Gap between upper/lower border
@@ -76,44 +76,48 @@
 
 TEXT
 # ..: CLOCK & CALENDAR :..
-${color d7d7d7}${offset 96}${voffset 30}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${color d7d7d7}${offset 196}${voffset 30}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
 
-${voffset -19}${offset 450}${font neuropol:size=20}${time %H:%M}${font}  ${voffset -3}${font Nimbus Mono L:size=9}$uptime
-${voffset -5}${offset 450}${cpubar cpu6 0, 250}${voffset 2}${color1}
-${font Nimbus Mono L:size=8 style=bold}${color2}${offset 460} ${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
-${color3}${execpi 60 JOUR=`date +%e`; cal -h | sed '1d' | sed 's/\(.*\)/\L\1/' | sed 's/^/${offset 456}/' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color e700e7}'"$JOUR"'${color3}'" "/}
+${voffset -19}${offset 550}${font neuropol:size=20}${time %H:%M}${font}  ${voffset -3}${font Nimbus Mono L:size=9}$uptime
+${voffset -5}${offset 550}${cpubar cpu6 0, 250}${voffset 2}${color1}
+${font Nimbus Mono L:size=8 style=bold}${color2}${offset 560} ${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
+${color3}${execpi 60 JOUR=`date +%e`; cal -h | sed '1d' | sed 's/\(.*\)/\L\1/' | sed 's/^/${offset 556}/' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color e700e7}'"$JOUR"'${color3}'" "/}
 
 
 
 #..: BATTERY :..
-${color d7d7d7}${offset 141}${voffset -8}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
-${offset 544}${voffset -10} ${font neuropol:size=20}${battery_percent BAT0} %${font Nimbus Mono L:size=8 style=bold}  Battery
-${offset 550}${voffset -5}${cpubar cpu6 0, 150}${voffset 2}${color1}
-${offset 560}..:: ${acpiacadapter} ::..
-${offset 560}${battery_time BAT0}
+${color d7d7d7}${offset 241}${voffset -8}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${offset 644}${voffset -10} ${font neuropol:size=20}${battery_percent BAT0} %${font Nimbus Mono L:size=8 style=bold}  Battery
+${offset 650}${voffset -5}${cpubar cpu6 0, 150}${voffset 2}${color1}
+${offset 660}..:: ${acpiacadapter} ::..
+${offset 660}${battery_time BAT0}
 
 #..: CPU USAGE :..
-${color d7d7d7}${offset 191}${voffset 80}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
-${offset 550}${voffset -7}${font neuropol:size=20}${cpu cpu0}% ${font Nimbus Mono L:size=8 style=bold}Cpu
-${offset 550}${voffset -5}${cpubar cpu6 0, 150}${voffset 2}${color1}
-${offset 550}${top pid 1} ${top name 1} ${top cpu 1}
-${offset 550}${top pid 2} ${top name 2} ${top cpu 2}
-${offset 550}${top pid 3} ${top name 3} ${top cpu 3}
-${offset 550}${top pid 4} ${top name 4} ${top cpu 4}
-${offset 550}${top pid 5} ${top name 5} ${top cpu 5}
+${color d7d7d7}${offset 291}${voffset 80}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${offset 650}${voffset -7}${font neuropol:size=20}${cpu cpu0}% ${font Nimbus Mono L:size=8 style=bold}Cpu
+${offset 650}${voffset -5}${cpubar cpu6 0, 150}${voffset 2}${color1}
+${offset 650}${top pid 1} ${top name 1} ${top cpu 1}
+${offset 650}${top pid 2} ${top name 2} ${top cpu 2}
+${offset 650}${top pid 3} ${top name 3} ${top cpu 3}
+${offset 650}${top pid 4} ${top name 4} ${top cpu 4}
+${offset 650}${top pid 5} ${top name 5} ${top cpu 5}
 
 
 #..: HARD DISK :..
-${color d7d7d7}${offset 121}${voffset 73}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
-${offset 450}${font neuropol:size=20}$memperc % ${font Nimbus Mono L:size=8 style=bold} Ram
-${offset 450}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
-${offset 460}linux ${fs_used /} / ${fs_size /}
-${offset 460}osx ${fs_used /mnt/osx} / ${fs_size /mnt/osx}
-${offset 460}boot ${fs_used /boot/efi} / ${fs_size /boot/efi}
-${offset 460}hdd ${execi 15 hddtemp /dev/sda | cut -c 30-31}°C
+${color d7d7d7}${offset 221}${voffset 73}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${offset 550}${font neuropol:size=20}$memperc % ${font Nimbus Mono L:size=8 style=bold} Ram
+${offset 550}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
+${offset 560}linux ${fs_used /} / ${fs_size /}
+${offset 560}osx ${fs_used /mnt/osx} / ${fs_size /mnt/osx}
+${offset 560}boot ${fs_used /boot/efi} / ${fs_size /boot/efi}
+${offset 560}hdd ${execi 15 hddtemp /dev/sda | cut -c 30-31}°C
 
-
-
+#..: ENTROPY :..
+${color d7d7d7}${offset 100}${voffset 80}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${offset 390}${font neuropol:size=20}$entropy_perc% ${font Nimbus Mono L:size=8 style=bold}Entropy ${voffset 0}${font Nimbus Mono L:size=8 style=bold}
+${offset 390}${voffset -5}${cpubar cpu6 0, 210}${voffset 2}${color1}
+${offset 405}${entropy_avail} / ${entropy_poolsize}
+${offset 405}${execpi 20 tac /var/log/owncloud.log |grep -m1 Transaction|sed 's/^.*"\(.*\)"/\1/'}
 
 
 
