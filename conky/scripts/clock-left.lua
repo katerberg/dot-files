@@ -24,8 +24,8 @@ Changelog:
   wifi_qual_y=112
 
   -- Entropy location
-  entropy_x=screen_width-145
-  entropy_y=277
+  -- entropy_x=screen_width-145
+  -- entropy_y=277
 
   -- Wifi transfer speed location
   wifi_trans_x=screen_width-195
@@ -80,20 +80,6 @@ settings_table = {
     x=wifi_trans_x, y=wifi_trans_y
   },
 {
-    name='entropy_perc',
-	arg='',
-	max=100,
-    bg_colour=0xffffff,
-    bg_alpha=0.1,
-    fg_colour=0xd7d7d7,
-    fg_alpha=0.6,
-    radius=30,
-    thickness=10,
-    start_angle=0,
-    end_angle=360,
-    x=entropy_x, y=entropy_y
-  },
-{
     name='hwmon',
 	arg='0 temp 1',
 	max=85,
@@ -107,7 +93,7 @@ settings_table = {
     start_angle=0,
     end_angle=360,
     x=therm_x, y=therm_y
-  },
+  }
 }
 require 'cairo'
 
