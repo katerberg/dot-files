@@ -19,13 +19,13 @@ Changelog:
   -- Screen width in pixels
   screen_width=800
 
-  -- Wifi quality location
-  wifi_qual_x=screen_width-100
-  wifi_qual_y=112
+  -- Weather location
+  weather_x=screen_width-100
+  weather_y=112
 
-  -- Entropy location
-  -- entropy_x=screen_width-145
-  -- entropy_y=277
+  -- Wifi quality location
+  wifi_qual_x=screen_width-145
+  wifi_qual_y=277
 
   -- Wifi transfer speed location
   wifi_trans_x=screen_width-195
@@ -38,19 +38,19 @@ Changelog:
 
 settings_table = {
   {
-    name='wireless_link_qual_perc',
-    arg='wlan0',
-    max=100,
-    bg_colour=0xffffff,
-    bg_alpha=0.1,
-    fg_colour=0xd7d7d7,
-    fg_alpha=0.6,
-    radius=55,
-    thickness=5,
-    start_angle=0,
-    end_angle=360,
-    x=wifi_qual_x, y=wifi_qual_y
-  },
+      name='wireless_link_qual_perc',
+      arg='wlan0',
+      max=100,
+      bg_colour=0xffffff,
+      bg_alpha=0.1,
+      fg_colour=0xd7d7d7,
+      fg_alpha=0.6,
+      radius=30,
+      thickness=10,
+      start_angle=0,
+      end_angle=360,
+      x=wifi_qual_x, y=wifi_qual_y
+    },
  {
     name='downspeedf',
 	arg='wlan0',
@@ -95,6 +95,19 @@ settings_table = {
     x=therm_x, y=therm_y
   }
 }
+weather_settings={
+    min=-15,
+    max=45,
+    bg_colour=0xffffff,
+    bg_alpha=0.1,
+    fg_colour=0xd7d7d7,
+    fg_alpha=0.6,
+    radius=55,
+    thickness=5,
+    start_angle=0,
+    end_angle=360,
+    x=weather_x, y=weather_y
+  }
 require 'cairo'
 
 function rgb_to_r_g_b(colour,alpha)
@@ -121,7 +134,9 @@ function draw_ring(cr,t,pt)
   cairo_arc(cr,xc,yc,ring_r,angle_0,angle_0+t_arc)
   cairo_set_source_rgba(cr,rgb_to_r_g_b(fgc,fga))
   cairo_stroke(cr)
+
 end
+
 
 function conky_clock_rings()
   local function setup_rings(cr,pt)
@@ -133,19 +148,6 @@ function conky_clock_rings()
 
       value=tonumber(str)
       if value == nil then value = 0 end
-
-    --Les ajouts suivants permettent de corriger le retard prit par les anneaux
-      --Ajout wlourf : conversion des minutes en centièmes d'heures
-      if pt['arg'] == "%I.%M"  then
-        value=os.date("%I")+os.date("%M")/60
-        if value>12 then value=value-12 end
-      end
-
-      --Ajout Fenouille84 : conversion des secondes en centièmes de minutes
-      if pt['arg'] == "%M.%S"  then
-        value=os.date("%M")+os.date("%S")/60
-      end
-      --Fin ajout
 
       local min=pt['min']
       if min == nil then min = 0 end
@@ -162,10 +164,19 @@ function conky_clock_rings()
   local updates=conky_parse('${updates}')
   update_num=tonumber(updates)
 
+  if update_num==5 then weather_temp='0' end
   if update_num>5 then
     for i in pairs(settings_table) do
-      setup_rings(cr,settings_table[i])
+      setup_rings(cr, settings_table[i])
     end
+
+    if (update_num + 354) % 360 == 0 then
+        local weather_temp_exec='${execp curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\\?metric\\=1\\&locCode\\=63124 | grep \\<title\\>Currently | sed "s/^.*Currently: \\([^:]*\\): \\([^C]*\\).*$/\\2/"}'
+        weather_temp=conky_parse(weather_temp_exec)
+    end
+    local pct=((weather_temp - weather_settings['min']) / (math.abs(weather_settings['max']) + math.abs(weather_settings['min'])))
+    draw_ring(cr,pct,weather_settings)
+    
   end
 
 end
