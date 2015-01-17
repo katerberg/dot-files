@@ -83,7 +83,7 @@ ${execpi 360 curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\
 
 
 #..: Wifi Quality :..
-${color d7d7d7}${voffset 73}${cpugraph cpu6 1,651}${voffset 1}${cpugraph cpu6 17,1}${color3}
+${color d7d7d7}${voffset 35}${cpugraph cpu6 1,651}${voffset 1}${cpugraph cpu6 17,1}${color3}
 ${offset 200}${font Nimbus Mono L:size=8 style=bold}Wifi Quality ${voffset -15}${font neuropol:size=20}${wireless_link_qual_perc wlan0} ${offset -27}% ${font Nimbus Mono L:size=8 style=bold}
 ${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
 $alignr${offset -480}network ${wireless_essid wlan0}
@@ -100,14 +100,21 @@ $alignr${offset -520}tDown ${totaldown wlan0}
 $alignr${offset -520}bitrate ${wireless_bitrate wlan0}
 
 #..: Temperature :..
-${color d7d7d7}${voffset 97}${cpugraph cpu6 1,671}${voffset 1}${cpugraph cpu6 17,1}${color3}
+${color d7d7d7}${voffset 86}${cpugraph cpu6 1,671}${voffset 1}${cpugraph cpu6 17,1}${color3}
 $alignr${offset -490}${font Nimbus Mono L:size=8 style=bold}Temperature ${voffset -15}${font neuropol:size=20}${hwmon 0 temp 1}°C ${font Nimbus Mono L:size=8 style=bold}
 ${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
-$alignr${offset -480}all cpu ${hwmon 1 temp 1}°C
-$alignr${offset -480}core one ${hwmon 1 temp 2}°C
-$alignr${offset -480}core two ${hwmon 1 temp 3}°C
-$alignr${offset -480}core three ${hwmon 1 temp 4}°C
-$alignr${offset -480}core four ${hwmon 1 temp 5}°C
+$alignr${offset -480}ambient ${hwmon 1 temp 30}°C
+$alignr${offset -480}enclosure ${hwmon 1 temp 1}°C
+$alignr${offset -480}gpu ${hwmon 1 temp 12}°C
+$alignr${offset -480}hdd ${hwmon 1 temp 18}°C
+$alignr${offset -480}heatsink ${hwmon 1 temp 32}°C
+$alignr${offset -480}memory ${hwmon 1 temp 25}°C
+$alignr${offset -480}power ${hwmon 1 temp 28}°C
+
+
+
+
+
 
 
 
