@@ -17,24 +17,27 @@ Changelog:
 ]]
 
   -- Screen width in pixels
-  screen_width=800
+  screen_width=900
 
   -- Weather location
-  weather_x=screen_width-100
+  weather_x=screen_width-200
   weather_y=112
 
   -- Wifi quality location
-  wifi_qual_x=screen_width-145
+  wifi_qual_x=screen_width-245
   wifi_qual_y=277
 
   -- Wifi transfer speed location
-  wifi_trans_x=screen_width-195
+  wifi_trans_x=screen_width-295
   wifi_trans_y=466
 
   -- Thermal location
-  therm_x=screen_width-125
+  therm_x=screen_width-225
   therm_y=673
-  
+
+  -- Fan location
+  fan_x=screen_width-104
+  fan_y=862
 
 settings_table = {
   {
@@ -153,6 +156,36 @@ settings_table = {
     start_angle=0,
     end_angle=360,
     x=therm_x, y=therm_y
+  },
+{
+    name='hwmon',
+	arg='1 fan 1',
+	max=6156,
+	min=1900,
+    bg_colour=0xffffff,
+    bg_alpha=0.1,
+    fg_colour=0xd7d7d7,
+    fg_alpha=0.6,
+    radius=29,
+    thickness=15,
+    start_angle=0,
+    end_angle=360,
+    x=fan_x, y=fan_y
+  },
+{
+    name='hwmon',
+	arg='1 fan 2',
+	max=5700,
+	min=1900,
+    bg_colour=0xffffff,
+    bg_alpha=0.1,
+    fg_colour=0xd7d7d7,
+    fg_alpha=0.6,
+    radius=42,
+    thickness=5,
+    start_angle=0,
+    end_angle=360,
+    x=fan_x, y=fan_y
   }
 }
 

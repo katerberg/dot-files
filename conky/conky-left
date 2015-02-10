@@ -24,8 +24,8 @@
 ##
   alignment top_left                  #Alignment
   
-  minimum_size 800                    #Minimum width (px)
-  maximum_width 800                   #Maximun width (px)
+  minimum_size 900                    #Minimum width (px)
+  maximum_width 900                   #Maximun width (px)
   
   gap_x -1                            #Gap between left/right border
   gap_y 60                            #Gap between upper/lower border
@@ -71,8 +71,8 @@
 ##
 ##..: Clock and rings :..
 ##
-    lua_load ~/.conky/scripts/clock-left.lua
-    lua_draw_hook_pre clock_rings
+  lua_load ~/.conky/scripts/clock-left.lua
+  lua_draw_hook_pre clock_rings
 
 TEXT
 #..: Weather :..
@@ -86,30 +86,38 @@ ${execpi 360 curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\
 ${color d7d7d7}${voffset 35}${cpugraph cpu6 1,651}${voffset 1}${cpugraph cpu6 17,1}${color3}
 ${offset 200}${font Nimbus Mono L:size=8 style=bold}Wifi Quality ${voffset -15}${font neuropol:size=20}${wireless_link_qual_perc wlan0} ${offset -27}% ${font Nimbus Mono L:size=8 style=bold}
 ${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
-$alignr${offset -480}network ${wireless_essid wlan0}
-$alignr${offset -480}gateway ${gw_ip wlan0}
-$alignr${offset -480}localhost ${addr wlan0}
-$alignr${offset -480}remote ${execi 60 curl icanhazip.com}
+$alignr${offset -580}network ${wireless_essid wlan0}
+$alignr${offset -580}gateway ${gw_ip wlan0}
+$alignr${offset -580}localhost ${addr wlan0}
+$alignr${offset -580}remote ${execi 60 curl icanhazip.com}
 
 #..: Wifi Transfer :..
 ${color d7d7d7}${voffset 66}${cpugraph cpu6 1,601}${voffset 1}${cpugraph cpu6 17,1}${color3}
-$alignr${offset -550}${font Nimbus Mono L:size=8 style=bold}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed wlan0}${font Nimbus Mono L:size=8 style=bold}
-$alignr${offset -550}${font Nimbus Mono L:size=8 style=bold}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed wlan0}${font Nimbus Mono L:size=8 style=bold}
-$alignr${offset -490}${voffset -5}${cpubar cpu6 0, 210}${voffset 2}${color1}
-$alignr${offset -520}tDown ${totaldown wlan0}
-$alignr${offset -520}bitrate ${wireless_bitrate wlan0}
+$alignr${offset -650}${font Nimbus Mono L:size=8 style=bold}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed wlan0}${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -650}${font Nimbus Mono L:size=8 style=bold}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed wlan0}${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -590}${voffset -5}${cpubar cpu6 0, 210}${voffset 2}${color1}
+$alignr${offset -620}tDown ${totaldown wlan0}
+$alignr${offset -620}bitrate ${wireless_bitrate wlan0}
 
 #..: Temperature :..
 ${color d7d7d7}${voffset 86}${cpugraph cpu6 1,671}${voffset 1}${cpugraph cpu6 17,1}${color3}
-$alignr${offset -490}${font Nimbus Mono L:size=8 style=bold}Temperature ${voffset -15}${font neuropol:size=20}${hwmon 0 temp 1}°C ${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -590}${font Nimbus Mono L:size=8 style=bold}Temperature ${voffset -15}${font neuropol:size=20}${hwmon 0 temp 1}°C ${font Nimbus Mono L:size=8 style=bold}
 ${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
-$alignr${offset -480}ambient ${hwmon 1 temp 30}°C
-$alignr${offset -480}enclosure ${hwmon 1 temp 1}°C
-$alignr${offset -480}gpu ${hwmon 1 temp 12}°C
-$alignr${offset -480}hdd ${hwmon 1 temp 18}°C
-$alignr${offset -480}heatsink ${hwmon 1 temp 32}°C
-$alignr${offset -480}memory ${hwmon 1 temp 25}°C
-$alignr${offset -480}power ${hwmon 1 temp 28}°C
+$alignr${offset -580}ambient ${hwmon 1 temp 30}°C
+$alignr${offset -580}enclosure ${hwmon 1 temp 1}°C
+$alignr${offset -580}gpu ${hwmon 1 temp 12}°C
+$alignr${offset -580}hdd ${hwmon 1 temp 18}°C
+$alignr${offset -580}heatsink ${hwmon 1 temp 32}°C
+$alignr${offset -580}memory ${hwmon 1 temp 25}°C
+$alignr${offset -580}power ${hwmon 1 temp 28}°C
+
+#..: Fan :..
+${color d7d7d7}${voffset 46}${cpugraph cpu6 1,792}${voffset 1}${cpugraph cpu6 17,1}${color3}
+$alignr${offset -450}${font Nimbus Mono L:size=8 style=bold}${voffset -5}Left Fan ${font neuropol:size=20} ${voffset -8}${hwmon 1 fan 1}${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -450}${font Nimbus Mono L:size=8 style=bold}${voffset 6}Right Fan ${font neuropol:size=20} ${voffset -7}${hwmon 1 fan 2}${font Nimbus Mono L:size=8 style=bold}
+${offset 260}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
+$alignr${offset -415}left ${hwmon 1 fan 1}
+$alignr${offset -415}right ${hwmon 1 fan 2}
 
 
 
