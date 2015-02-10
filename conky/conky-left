@@ -77,8 +77,8 @@
 TEXT
 #..: Weather :..
 ${color d7d7d7}${voffset 28}${cpugraph cpu6 1,697}${voffset 1}${cpugraph cpu6 17,1}${color3}
-${offset 200}${font Nimbus Mono L:size=8 style=bold}${execpi 360 curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=1\&locCode\=63124 | grep \<title\>Currently | sed 's/^.*Currently: \([^:]*\): \([^C]*\).*$/\1${voffset -15}${font neuropol:size=20} \2°C/'}${offset -27}${font Nimbus Mono L:size=8 style=bold}
-${offset 100}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
+$alignr${offset -530}${font Nimbus Mono L:size=8 style=bold}${execpi 360 curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=1\&locCode\=63124 | grep \<title\>Currently | sed 's/^.*Currently: \([^:]*\): \([^C]*\).*$/\1${voffset -15}${font neuropol:size=20} \2°C/'}${offset -27}${font Nimbus Mono L:size=8 style=bold}
+$alignr${offset -480}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
 ${execpi 360 curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=1\&locCode\=63124|grep High|sed 's/.*High: \([^ ]*\) C Low: \([^ ]*\) C \([^&]*\).*/$alignr${offset -480}High: \1° Low: \2° \n$alignr${offset -480}Forecast: \3\n/'|sed '1!b;s/High/Tomorrow: High/'|sed '4!b;s/High/Overmorrow: High/'}
 
 
@@ -116,8 +116,11 @@ ${color d7d7d7}${voffset 46}${cpugraph cpu6 1,792}${voffset 1}${cpugraph cpu6 17
 $alignr${offset -450}${font Nimbus Mono L:size=8 style=bold}${voffset -5}Left Fan ${font neuropol:size=20} ${voffset -8}${hwmon 1 fan 1}${font Nimbus Mono L:size=8 style=bold}
 $alignr${offset -450}${font Nimbus Mono L:size=8 style=bold}${voffset 6}Right Fan ${font neuropol:size=20} ${voffset -7}${hwmon 1 fan 2}${font Nimbus Mono L:size=8 style=bold}
 ${offset 260}${voffset -5}${cpubar cpu6 0, 250}${voffset 2}${color1}
-$alignr${offset -415}left ${hwmon 1 fan 1}
-$alignr${offset -415}right ${hwmon 1 fan 2}
+$alignr${offset -415}${rss https://news.google.com/?output=rss 10 item_title 0}
+$alignr${offset -415}${rss https://news.google.com/?output=rss 10 item_title 1}
+$alignr${offset -415}${rss https://news.google.com/?output=rss 10 item_title 2}
+$alignr${offset -415}${rss https://news.google.com/?output=rss 10 item_title 3}
+$alignr${offset -415}${rss https://news.google.com/?output=rss 10 item_title 4}
 
 
 
