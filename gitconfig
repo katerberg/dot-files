@@ -6,4 +6,6 @@ co = checkout
 cho = checkout
 cho = checkout
 br = branch
+pu = push -u origin HEAD
+nuke = reset --hard origin/master
 branch-clean = '!git fetch && git remote prune origin && git branch --merged master | grep -v master | xargs git branch -d'
