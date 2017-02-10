@@ -13,6 +13,9 @@ cp tmux.conf ~/.tmux.conf
 #jshint
 cp jshintrc ~/.jshintrc
 
+#eslint
+cp eslintrc ~/.eslintrc
+
 #conky
 sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/conky
 sudo chmod u+s /usr/sbin/hddtemp
