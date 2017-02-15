@@ -1,8 +1,7 @@
 {
   "extends": "eslint:recommended",
-  "plugins": ["xo", "mocha", "react"],
+  "plugins": ["mocha", "react"],
   "rules": {
-    "xo/filename-case": ["error", {"case": "kebabCase"}],
     "no-console": ["error", {"allow": ["log"]}],
     "no-extra-parens":  "error",
     "no-template-curly-in-string": "error",
@@ -74,7 +73,7 @@
     "key-spacing": "error",
     "keyword-spacing": "error",
     "multiline-ternary": ["error", "never"],
-    "new-cap": ["error", {"properties": false}],
+    "new-cap": ["error", {"properties": false, "capIsNew": false}],
     "new-parens": "error",
     "no-bitwise": "error",
     "no-continue": "error",
@@ -161,7 +160,8 @@
     "sinon": true,
     "beforeEach": true,
     "afterEach": true,
-    "document": true
+    "document": true,
+    "window": true
   },
   "parserOptions": {
     "sourceType": "module",
