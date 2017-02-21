@@ -2,7 +2,7 @@
   "extends": "eslint:recommended",
   "plugins": ["mocha", "react"],
   "rules": {
-    "no-console": ["error", {"allow": ["log"]}],
+    "no-console": "error",
     "no-extra-parens":  "error",
     "no-template-curly-in-string": "error",
     "class-methods-use-this": ["error", {"exceptMethods": ["render"]}],
@@ -120,7 +120,7 @@
     "template-curly-spacing": "error",
     "yield-star-spacing": "error",
     "react/display-name": "error",
-    "react/forbid-prop-types": "error",
+    "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": "error",
     "react/jsx-closing-bracket-location": "error",
     "react/jsx-curly-spacing": "error",
@@ -128,7 +128,7 @@
     "react/jsx-indent-props": "error",
     "react/jsx-key": "error",
     "react/jsx-max-props-per-line": "error",
-    "react/jsx-no-bind": "error",
+    "react/jsx-no-bind": 0,
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-no-literals": "error",
     "react/jsx-no-undef": "error",
@@ -141,14 +141,14 @@
     "react/no-did-update-set-state": "error",
     "react/no-direct-mutation-state": "error",
     "react/no-multi-comp": "error",
-    "react/no-set-state": "error",
+    "react/no-set-state": 0,
     "react/no-unknown-property": "error",
     "react/prefer-es6-class": "error",
     "react/prop-types": "error",
     "react/react-in-jsx-scope": "error",
     "react/self-closing-comp": "error",
     "react/sort-comp": "error",
-    "react/jsx-wrap-multilines": "error"
+    "react/jsx-wrap-multilines": 0
   },
   "env": {
     "node": true,
