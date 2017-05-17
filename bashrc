@@ -16,5 +16,9 @@ alias gti=git
 export GIT_EDITOR=vim
 export EDITOR=vim
 
+function killport () {
+  lsof -t -i :$1 | xargs --no-run-if-empty kill -9
+}
+
 # User specific aliases and functions
 export PS1="\$? \w\\$ \[\e[0m\]"
