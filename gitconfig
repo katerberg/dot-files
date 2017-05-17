@@ -6,6 +6,7 @@ ci = commit
 co = checkout
 cho = checkout
 cho = checkout
+mnf = merge --no-ff
 br = branch
 pu = push -u origin HEAD
 nuke = reset --hard origin/HEAD
@@ -16,3 +17,6 @@ branch-clean = '!git fetch && git remote prune origin && git branch --merged mas
 	email = katerberg@fastmail.fm
 [push]
 	default = simple
+[core]
+	autocrlf = true
+	whitespace = cr-at-eol
