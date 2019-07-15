@@ -12,6 +12,7 @@ shopt -s histappend
 
 alias gits=git
 alias gti=git
+alias sl=ls
 
 export GIT_EDITOR=vim
 export EDITOR=vim

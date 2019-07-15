@@ -17,6 +17,10 @@ branch-clean = !git fetch && git remote prune origin && git branch --merged mast
 	email = katerberg@fastmail.fm
 [push]
 	default = simple
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
 [core]
 	autocrlf = true
 	whitespace = cr-at-eol
