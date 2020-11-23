@@ -12,9 +12,11 @@ shopt -s histappend
 
 alias ta='tmux attach-session -t'
 alias tl='tmux list-sessions'
+alias tn='tmux new -s'
 alias gits=git
 alias gti=git
 alias sl=ls
+alias csrc='cd ~/src'
 alias nocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_sess_1" --disable-web-security'
 
 
