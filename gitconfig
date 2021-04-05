@@ -6,12 +6,13 @@ ci = commit
 co = checkout
 cho = checkout
 cho = checkout
+cp = cherry-pick
 mnf = merge --no-ff
 br = branch
 pu = push -u origin HEAD
 nuke = reset --hard origin/HEAD
 please = push --force-with-lease
-branch-clean = !git fetch && git remote prune origin && git branch --merged master | grep -v master | xargs git branch -d
+branch-clean = !git fetch && git remote prune origin && git branch --merged staging | grep -v staging | xargs git branch -d
 [user]
 	name = Mark Katerberg
 	email = katerberg@fastmail.fm
@@ -22,5 +23,5 @@ branch-clean = !git fetch && git remote prune origin && git branch --merged mast
 [rebase]
 	autoStash = true
 [core]
-	autocrlf = true
+	autocrlf = false
 	whitespace = cr-at-eol
