@@ -4,6 +4,7 @@ t = status
 st = status
 ci = commit
 co = checkout
+con = "!n() { git checkout -b katerberg/chore/$1;}; n"
 cho = checkout
 cho = checkout
 cp = cherry-pick
