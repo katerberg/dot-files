@@ -13,12 +13,17 @@ shopt -s histappend
 alias ta='tmux attach-session -t'
 alias tl='tmux list-sessions'
 alias tn='tmux new -s'
+alias tk='tmux kill-session -t'
 alias gits=git
+alias gi=git
 alias gti=git
 alias sl=ls
 alias csrc='cd ~/src'
 alias nocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_sess_1" --disable-web-security'
-
+alias mys='mysql -h127.0.0.1 -uroot -A'
+alias ocd='OVERCOMMIT_DISABLE=1 '
+alias hf='HEADLESS=false '
+alias hr='HEADLESS=false rspec'
 
 export GIT_EDITOR=vim
 export EDITOR=vim
