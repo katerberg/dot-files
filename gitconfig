@@ -4,19 +4,23 @@ t = status
 st = status
 ci = commit
 co = checkout
-con = "!n() { git checkout -b katerberg/chore/$1;}; n"
+con = "!n() { git checkout -b katerberg/$1;}; n"
 cho = checkout
 cho = checkout
 cp = cherry-pick
+rbc = rebase --continue
 mnf = merge --no-ff
 br = branch
 pu = push -u origin HEAD
 nuke = reset --hard origin/HEAD
 please = push --force-with-lease
-branch-clean = !git fetch && git remote prune origin && git branch --merged staging | grep -v staging | xargs git branch -d
+branch-clean = !git fetch && git remote prune origin && git branch --merged main | grep -v main | xargs git branch -d
+branch-nuke = !git fetch && git remote prune origin && git branch | grep -v main | xargs git branch -D
 [user]
 	name = Mark Katerberg
 	email = katerberg@fastmail.fm
+[fetch]
+	prune = true
 [push]
 	default = simple
 [pull]
