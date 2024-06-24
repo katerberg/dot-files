@@ -14,6 +14,7 @@ alias ta='tmux attach-session -t'
 alias tl='tmux list-sessions'
 alias tn='tmux new -s'
 alias tk='tmux kill-session -t'
+alias tx='tmuxinator start'
 alias gits=git
 alias gi=git
 alias gti=git
