@@ -23,6 +23,7 @@ alias csrc='cd ~/src'
 alias nocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_sess_1" --disable-web-security'
 alias mys='mysql -h127.0.0.1 -uroot -A'
 alias ocd='OVERCOMMIT_DISABLE=1 '
+alias recode-video='for f in *.mp4; do ffmpeg -i "$f" "2${f}" && mv "2${f}" "$f"; done'
 
 alias ytw="yarn test -u --watch"
 
